@@ -38,6 +38,10 @@ def main():
             if player.if_collision(asteroid):
                 print("Game over!")
                 sys.exit(0)
+            for bullet in shots:
+                if bullet.if_collision(asteroid):
+                    asteroid.kill()
+                    bullet.kill()
 
         screen.fill(color="black")
         
